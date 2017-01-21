@@ -46,11 +46,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameScore.cs" />
+     <Compile Include="Assets\Scripts\GameTime.cs" />
      <Compile Include="Assets\Scripts\Jumper.cs" />
      <Compile Include="Assets\Scripts\NPCJumperControl.cs" />
      <Compile Include="Assets\Scripts\ParallaxBGObject.cs" />
      <Compile Include="Assets\Scripts\PlayerJumperControl.cs" />
      <Compile Include="Assets\Scripts\TitleScreenBackground.cs" />
+     <Compile Include="Assets\Scripts\UI\BigTextController.cs" />
+     <Compile Include="Assets\Scripts\UI\PopupTextGoUp.cs" />
+     <Compile Include="Assets\Scripts\UI\PopupTextSpawner.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreIndicator.cs" />
+     <Compile Include="Assets\Scripts\UI\Timer.cs" />
      <Compile Include="Assets\Scripts\Wave.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
