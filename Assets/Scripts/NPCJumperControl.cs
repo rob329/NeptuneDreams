@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Jumper))]
 public class NPCJumperControl : MonoBehaviour
 {
-    public float JumpRange = 0.5;
+    public float JumpRange = 0.5f;
 
     private Jumper jumper;
 
