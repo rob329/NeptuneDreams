@@ -14,6 +14,7 @@ public class Jumper : MonoBehaviour
     public KeyCode Key;
     public float JumpSpeed;
     public float Gravity;
+    public Wave WavePrefab;
 
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
@@ -33,6 +34,7 @@ public class Jumper : MonoBehaviour
             {
                 yVelocity = JumpSpeed;
                 currentState = JumperState.JUMPING;
+                SpawnWaves();
             }
         }
         transform.position = new Vector3(transform.position.x, initialHeight + currentY, transform.position.z);
@@ -55,5 +57,10 @@ public class Jumper : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void SpawnWaves()
+    {
+        var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
     }
 }
