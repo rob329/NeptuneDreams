@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Jumper : MonoBehaviour
@@ -73,6 +72,7 @@ public class Jumper : MonoBehaviour
         else
         {
             var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
+            rightWave.Reversed = false;
             var leftWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
             leftWave.Reversed = true;
         }
