@@ -25,6 +25,14 @@ public class Wave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Calculate if it's dead
+        var diesAtX = lastX + Direction * LifeRange;
+        if ((!Reversed && transform.position.x > diesAtX)
+            || (Reversed && transform.position.x < diesAtX))
+        {
+            GameObject.Destroy(gameObject);
+        }
+
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
     }
 }

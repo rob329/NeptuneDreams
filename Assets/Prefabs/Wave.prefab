@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Reversed: 0
   Speed: 8
-  LifeRange: 0
+  LifeRange: 5
 --- !u!212 &212981422044994046
 SpriteRenderer:
   m_ObjectHideFlags: 1
