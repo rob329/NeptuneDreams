@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Jumper : MonoBehaviour
@@ -10,6 +11,7 @@ public class Jumper : MonoBehaviour
         JUMPING
     }
 
+    public KeyCode Key;
     public float JumpSpeed;
     public float Gravity;
 
@@ -25,6 +27,14 @@ public class Jumper : MonoBehaviour
 
     void Update()
     {
+        if (currentState == JumperState.ON_GROUND)
+        {
+            if (Input.GetKeyDown(Key))
+            {
+                yVelocity = JumpSpeed;
+                currentState = JumperState.JUMPING;
+            }
+        }
         transform.position = new Vector3(transform.position.x, initialHeight + currentY, transform.position.z);
     }
 
@@ -34,11 +44,6 @@ public class Jumper : MonoBehaviour
         {
             case JumperState.ON_GROUND:
                 currentY = 0;
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    yVelocity = JumpSpeed;
-                    currentState = JumperState.JUMPING;
-                }
                 break;
             case JumperState.JUMPING:
                 yVelocity -= Gravity;
