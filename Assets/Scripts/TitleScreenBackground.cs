@@ -35,11 +35,13 @@ public class TitleScreenBackground : MonoBehaviour {
 		} else {
 
 			if (AnyKeyDisplay != null) AnyKeyDisplay.SetActive (true);
-			if (Input.anyKeyDown) {
-				SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
-				FadeAway = true;
+			if (FadeAway == false) {
+				if (Input.anyKeyDown) {
+					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
+					FadeAway = true;
 
-				Destroy (OtherObjs);
+					Destroy (OtherObjs);
+				}
 			}
 
 
