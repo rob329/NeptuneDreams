@@ -55,24 +55,24 @@ public class Jumper : MonoBehaviour
         }
     }
 
-    public void Jump()
+    public void Jump(bool isNpc = false)
     {
         if (currentState == JumperState.ON_GROUND)
         {
             yVelocity = JumpSpeed;
             currentState = JumperState.JUMPING;
-            SpawnWaves();
+            SpawnWaves(isNpc: isNpc);
         }
     }
 
-    private void SpawnWaves()
+    private void SpawnWaves(bool isNpc = false)
     {
         var waves = Wave.GetAllWavesInRange(transform);
         if (waves.Count > 0)
         {
             foreach (var wave in waves)
             {
-                wave.KeepAlive(transform);
+                wave.KeepAlive(transform, isNpc: isNpc);
             }
         }
         else
