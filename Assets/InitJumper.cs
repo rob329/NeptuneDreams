@@ -9,11 +9,6 @@ public class InitJumper : MonoBehaviour
     public Transform LabelSpot;
     public Color NPCColor;
 
-    void Start()
-    {
-        InitNPC();
-    }
-
     public void InitPlayer(KeyCode key)
     {
         var controller = gameObject.AddComponent<PlayerJumperControl>();
