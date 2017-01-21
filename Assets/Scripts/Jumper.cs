@@ -10,7 +10,6 @@ public class Jumper : MonoBehaviour
         JUMPING
     }
 
-    public KeyCode Key;
     public float JumpSpeed;
     public float Gravity;
     public Wave WavePrefab;
@@ -18,7 +17,14 @@ public class Jumper : MonoBehaviour
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
     private float initialHeight;
-    private float yVelocity;    
+    private float yVelocity;
+
+    public bool CanJump {
+        get
+        {
+            return currentState == JumperState.ON_GROUND;
+        }
+    }
 
     void Start()
     {
@@ -27,15 +33,6 @@ public class Jumper : MonoBehaviour
 
     void Update()
     {
-        if (currentState == JumperState.ON_GROUND)
-        {
-            if (Input.GetKeyDown(Key))
-            {
-                yVelocity = JumpSpeed;
-                currentState = JumperState.JUMPING;
-                SpawnWaves();
-            }
-        }
         transform.position = new Vector3(transform.position.x, initialHeight + currentY, transform.position.z);
     }
 
@@ -58,9 +55,18 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    public void Jump()
+    {
+        if (currentState == JumperState.ON_GROUND)
+        {
+            yVelocity = JumpSpeed;
+            currentState = JumperState.JUMPING;
+            SpawnWaves();
+        }
+    }
+
     private void SpawnWaves()
     {
-
         var waves = Wave.GetAllWavesInRange(transform);
         if (waves.Count > 0)
         {
