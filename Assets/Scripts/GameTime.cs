@@ -53,6 +53,6 @@ public class GameTime : MonoBehaviour
     {
         yield return BigTextController.GetInstance().ShowText("Game!");
         yield return BigTextController.GetInstance().ShowText("New high score!");
-        BigTextController.GetInstance().ShowText("Press ESC to return to title screen");
+        BigTextController.GetInstance().ShowTextPermanent("Press ESC to return to title screen");
     }
 }

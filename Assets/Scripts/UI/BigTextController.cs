@@ -27,6 +27,12 @@ public class BigTextController : MonoBehaviour
         return WaitForText();
     }
 
+    public void ShowTextPermanent(string text)
+    {
+        uiText.text = text;
+        animator.SetTrigger("ShowTextPermanent");
+    }
+
     public IEnumerator WaitForText()
     {
         yield return new WaitUntil(() =>
