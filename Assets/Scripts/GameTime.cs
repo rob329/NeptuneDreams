@@ -8,6 +8,11 @@ public class GameTime : MonoBehaviour
 {
     public float TimeRemaining = 2 * 60;
 
+    public static GameTime GetInstance()
+    {
+        return FindObjectOfType<GameTime>();
+    }
+
     public bool IsRunning
     {
         get

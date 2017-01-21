@@ -53,7 +53,7 @@ public class Wave : MonoBehaviour
         if  (Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange)
         {
             lastX = jumper.position.x;
-            if (!isNpc)
+            if (!isNpc && GameTime.GetInstance().IsRunning)
             {
                 GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
                 PointWorth += PointsAddedPerJump;
