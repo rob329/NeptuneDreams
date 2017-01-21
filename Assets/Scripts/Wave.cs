@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
+    public int PointWorth;
+    public int PointsAddedPerJump;
+
     public bool Reversed;
     public float Speed;
     public float LifeRange;
@@ -49,6 +52,8 @@ public class Wave : MonoBehaviour
         if  (Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange)
         {
             lastX = jumper.position.x;
+            GameScore.GetInstance().Score += PointWorth;
+            PointWorth += PointsAddedPerJump;
         }
     }
 
