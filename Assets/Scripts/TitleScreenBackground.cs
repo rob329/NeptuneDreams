@@ -44,7 +44,8 @@ public class TitleScreenBackground : MonoBehaviour {
                     return;
                 }
 
-                if (Input.anyKeyDown) {
+				if (Input.anyKeyDown) {
+					this.gameObject.GetComponent<AudioSource> ().Play ();
 					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
 					FadeAway = true;
 
