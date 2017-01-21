@@ -7,7 +7,16 @@ public class InitJumper : MonoBehaviour
 {
     public GameObject KeyLabelPrefab;
     public Transform LabelSpot;
+    public SpriteRenderer Eyes;
+    public SpriteRenderer Mouth;
     public Color NPCColor;
+
+    public Sprite[] bodies;
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = bodies[Random.Range(0, bodies.Length)];
+    }
 
     public void InitPlayer(KeyCode key)
     {
@@ -21,6 +30,9 @@ public class InitJumper : MonoBehaviour
     public void InitNPC()
     {
         var controller = gameObject.AddComponent<NPCJumperControl>();
-        GetComponent<SpriteRenderer>().color = NPCColor;
+        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.color = NPCColor;
+        }
     }
 }

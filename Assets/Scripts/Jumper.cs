@@ -12,6 +12,7 @@ public class Jumper : MonoBehaviour
 
     public float JumpSpeed;
     public float Gravity;
+    public float WaveStartOffset;
     public Wave WavePrefab;
 
     private JumperState currentState = JumperState.ON_GROUND;
@@ -77,9 +78,9 @@ public class Jumper : MonoBehaviour
         }
         else
         {
-            var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
+            var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position + new Vector3(WaveStartOffset, 0), Quaternion.identity);
             rightWave.Reversed = false;
-            var leftWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
+            var leftWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position - new Vector3(WaveStartOffset, 0), Quaternion.identity);
             leftWave.Reversed = true;
         }
     }
