@@ -10,4 +10,10 @@ public class GameScore : MonoBehaviour
     {
         return FindObjectOfType<GameScore>();
     }
+    
+    public void AddScore(int points, Vector3 position)
+    {
+        Score += points;
+        PopupTextSpawner.GetInstance().CreatePopupText(points.ToString("N0"), position);
+    }
 }

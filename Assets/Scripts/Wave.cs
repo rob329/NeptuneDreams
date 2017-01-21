@@ -54,7 +54,7 @@ public class Wave : MonoBehaviour
             lastX = jumper.position.x;
             if (!isNpc)
             {
-                GameScore.GetInstance().Score += PointWorth;
+                GameScore.GetInstance().AddScore(PointWorth, jumper.position);
                 PointWorth += PointsAddedPerJump;
             }
         }
