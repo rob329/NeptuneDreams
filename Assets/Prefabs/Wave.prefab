@@ -56,7 +56,7 @@ MonoBehaviour:
   PointsAddedPerJump: 5
   PopupHeight: 3
   Reversed: 0
-  Speed: 6
+  Speed: 5.75
   LifeRange: 5
   KeepAliveJumpRange: 0.75
   TerribleJumpRange: 2.5
