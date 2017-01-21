@@ -9,15 +9,19 @@ public class Timer : MonoBehaviour
     private Text text;
     private GameTime gameTime;
 
-    // Use this for initialization
     void Start()
     {
         text = GetComponent<Text>();
         gameTime = FindObjectOfType<GameTime>();
+        UpdateText();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
+    {
+        UpdateText();   
+    }
+
+    private void UpdateText()
     {
         float timeRemaining = gameTime.TimeRemaining;
         int minutesRemaining = Mathf.FloorToInt(timeRemaining / 60);
