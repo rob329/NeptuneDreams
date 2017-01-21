@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Wave : MonoBehaviour
@@ -7,6 +8,12 @@ public class Wave : MonoBehaviour
     public bool Reversed;
     public float Speed;
     public float LifeRange;
+    public float KeepAliveJumpRange;
+    /// <summary>
+    /// The maximum range to consider a jumper responsible for keeping a wave alive;
+    /// if they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
+    /// </summary>
+    public float TerribleJumpRange;
 
     private float lastX;
 
@@ -34,5 +41,25 @@ public class Wave : MonoBehaviour
         }
 
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
+    }
+
+    public void KeepAlive(Transform jumper)
+    {
+        var jumperX = jumper.position.x;
+        if  (Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange)
+        {
+            lastX = jumper.position.x;
+        }
+    }
+
+    public bool IsInRange(Transform jumper)
+    {
+        var jumperX = jumper.position.x;
+        return Mathf.Abs(jumperX - transform.position.x) < TerribleJumpRange;
+    }
+
+    public static IList<Wave> GetAllWavesInRange(Transform jumper)
+    {
+        return FindObjectsOfType<Wave>().Where(w => w.IsInRange(jumper)).ToList();
     }
 }

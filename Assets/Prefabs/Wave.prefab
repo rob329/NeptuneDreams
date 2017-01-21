@@ -55,6 +55,8 @@ MonoBehaviour:
   Reversed: 0
   Speed: 8
   LifeRange: 5
+  KeepAliveJumpRange: 0.5
+  TerribleJumpRange: 2.5
 --- !u!212 &212981422044994046
 SpriteRenderer:
   m_ObjectHideFlags: 1
