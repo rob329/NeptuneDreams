@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class TitleScreenBackground : MonoBehaviour {
@@ -9,9 +10,13 @@ public class TitleScreenBackground : MonoBehaviour {
 	public bool FadeAway;
 	public GameObject OtherObjs;
 	public GameObject Parent;
+	public GameObject AnyKeyDisplay;
+	public int HighScore;
+	public Text HighScoreDisplay;
+	private float AnyKeyDelay;
 	// Use this for initialization
 	void Start () {
-		
+		HighScoreDisplay.text = "High Score: " + HighScore;
 	}
 	
 	// Update is called once per frame
@@ -21,10 +26,25 @@ public class TitleScreenBackground : MonoBehaviour {
 
 		trans.position = new Vector3 (trans.position.x + DirectionAndSpeed * Time.deltaTime, trans.position.y, trans.position.z);
 
-		if (Input.anyKeyDown) {
-			SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
-			FadeAway = true;
-			Destroy (OtherObjs);
+
+
+		if (AnyKeyDelay < 1) {
+			AnyKeyDelay += Time.deltaTime;
+			AnyKeyDisplay.SetActive (false);
+
+		} else {
+
+			if (AnyKeyDisplay != null) AnyKeyDisplay.SetActive (true);
+			if (FadeAway == false) {
+				if (Input.anyKeyDown) {
+					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
+					FadeAway = true;
+
+					Destroy (OtherObjs);
+				}
+			}
+
+
 		}
 
 		if (FadeAway == true) {
