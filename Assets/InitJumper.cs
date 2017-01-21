@@ -7,10 +7,11 @@ public class InitJumper : MonoBehaviour
 {
     public GameObject KeyLabelPrefab;
     public Transform LabelSpot;
+    public Color NPCColor;
 
     void Start()
     {
-        InitPlayer(KeyCode.Q);
+        InitNPC();
     }
 
     public void InitPlayer(KeyCode key)
@@ -24,6 +25,7 @@ public class InitJumper : MonoBehaviour
     
     public void InitNPC()
     {
-        
+        var controller = gameObject.AddComponent<NPCJumperControl>();
+        GetComponent<SpriteRenderer>().color = NPCColor;
     }
 }

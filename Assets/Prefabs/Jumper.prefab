@@ -85,6 +85,7 @@ MonoBehaviour:
   KeyLabelPrefab: {fileID: 1278781097937712, guid: ec89d6f2ead33e94b99ae8b19f37506e,
     type: 2}
   LabelSpot: {fileID: 4763879419986892}
+  NPCColor: {r: 0.1397059, g: 0.1397059, b: 0.1397059, a: 1}
 --- !u!114 &114974005035770152
 MonoBehaviour:
   m_ObjectHideFlags: 1
