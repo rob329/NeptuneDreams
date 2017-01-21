@@ -46,14 +46,17 @@ public class Wave : MonoBehaviour
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
     }
 
-    public void KeepAlive(Transform jumper)
+    public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         var jumperX = jumper.position.x;
         if  (Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange)
         {
             lastX = jumper.position.x;
-            GameScore.GetInstance().Score += PointWorth;
-            PointWorth += PointsAddedPerJump;
+            if (!isNpc)
+            {
+                GameScore.GetInstance().Score += PointWorth;
+                PointWorth += PointsAddedPerJump;
+            }
         }
     }
 
