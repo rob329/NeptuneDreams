@@ -8,6 +8,8 @@ public class GameTime : MonoBehaviour
 {
     public float TimeRemaining = 2 * 60;
 
+    private bool started = false;
+
     public static GameTime GetInstance()
     {
         return FindObjectOfType<GameTime>();
@@ -17,12 +19,22 @@ public class GameTime : MonoBehaviour
     {
         get
         {
-            return TimeRemaining > 0;
+            return started && TimeRemaining > 0;
         }
     }
 
     void Start()
     {
+        StartCoroutine(Countdown());
+    }
+
+    private IEnumerator Countdown()
+    {
+        yield return BigTextController.GetInstance().ShowText("3", 2);
+        yield return BigTextController.GetInstance().ShowText("2", 2);
+        yield return BigTextController.GetInstance().ShowText("1", 2);
+        started = true;
+        BigTextController.GetInstance().ShowText("WAVE");
         // Little hack here: add a second to the clock so a player has a chance to see
         // the full time
         TimeRemaining += 1;

@@ -14,15 +14,16 @@ public class BigTextController : MonoBehaviour
         return FindObjectOfType<BigTextController>();
     }
 
-    void Start()
+    void Awake()
     {
         uiText = GetComponent<Text>();
         animator = GetComponent<Animator>();
     }
 
-    public IEnumerator ShowText(string text)
+    public IEnumerator ShowText(string text, float timeScale = 1)
     {
         uiText.text = text;
+        animator.SetFloat("TextSpeed", timeScale);
         animator.SetTrigger("ShowText");
         return WaitForText();
     }
