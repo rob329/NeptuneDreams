@@ -36,7 +36,15 @@ public class TitleScreenBackground : MonoBehaviour {
 
 			if (AnyKeyDisplay != null) AnyKeyDisplay.SetActive (true);
 			if (FadeAway == false) {
-				if (Input.anyKeyDown) {
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Debug.Log("Quitting");
+                    Application.Quit();
+                    return;
+                }
+
+                if (Input.anyKeyDown) {
 					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
 					FadeAway = true;
 
