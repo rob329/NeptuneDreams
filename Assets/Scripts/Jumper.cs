@@ -62,5 +62,7 @@ public class Jumper : MonoBehaviour
     private void SpawnWaves()
     {
         var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
+        var leftWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position, Quaternion.identity);
+        leftWave.Reversed = true;
     }
 }
