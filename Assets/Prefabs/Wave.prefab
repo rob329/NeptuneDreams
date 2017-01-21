@@ -52,10 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1636c91b8328f439de3ef84ab1e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PointWorth: 10
+  PointsAddedPerJump: 5
+  PopupHeight: 3
   Reversed: 0
-  Speed: 8
+  Speed: 6
   LifeRange: 5
-  KeepAliveJumpRange: 0.5
+  KeepAliveJumpRange: 0.75
   TerribleJumpRange: 2.5
 --- !u!212 &212981422044994046
 SpriteRenderer:
