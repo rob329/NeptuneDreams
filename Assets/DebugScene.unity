@@ -234,21 +234,6 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 6 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
@@ -346,58 +331,9 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 6 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &206786227 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 954070878}
---- !u!114 &206786228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 206786227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
---- !u!1 &281497310 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 2000579587}
---- !u!114 &281497311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 281497310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
 --- !u!1001 &437673729
 Prefab:
   m_ObjectHideFlags: 0
@@ -487,21 +423,6 @@ Prefab:
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
       value: Jumper 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
@@ -595,21 +516,6 @@ Prefab:
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
       value: Jumper 6 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
@@ -708,21 +614,6 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 5
       objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
@@ -768,21 +659,6 @@ Prefab:
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
       value: Jumper 6 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
@@ -830,41 +706,9 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 6 (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1008844519 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 711445120}
---- !u!114 &1008844520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1008844519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae1cde33c7f46745a28c47772f7c347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: 112
 --- !u!1001 &1146970993
 Prefab:
   m_ObjectHideFlags: 0
@@ -916,23 +760,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1172891265 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 155142011}
---- !u!114 &1172891266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1172891265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
 --- !u!1001 &1269874837
 Prefab:
   m_ObjectHideFlags: 0
@@ -980,91 +807,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23f3af24975d683448b69092f05ffc57, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1298962886 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 149796682}
---- !u!114 &1298962887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1298962886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae1cde33c7f46745a28c47772f7c347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: 113
---- !u!1 &1514959250 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 579390188}
---- !u!114 &1514959251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1514959250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
---- !u!1 &1613197053 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 109201294}
---- !u!114 &1613197054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1613197053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
---- !u!1 &1646993202 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 1146970993}
---- !u!114 &1646993203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646993202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae1cde33c7f46745a28c47772f7c347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: 119
---- !u!1 &1672534348 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 684345852}
---- !u!114 &1672534349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1672534348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
 --- !u!1001 &1795864292
 Prefab:
   m_ObjectHideFlags: 0
@@ -1195,25 +937,9 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114974005035770152, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
+    - {fileID: 114238228826951710, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1941993993 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 982083730}
---- !u!114 &1941993994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1941993993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
 --- !u!4 &1950814243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4931820999558182, guid: 23f3af24975d683448b69092f05ffc57,
@@ -1262,41 +988,9 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 6 (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.1397059
-      objectReference: {fileID: 0}
-    - target: {fileID: 212787499179839322, guid: e2a38acdd2181734b874403401a2c4ee,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.1397059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2006601222 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 996579975}
---- !u!114 &2006601223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2006601222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84283d1eb654df94589788f17e2f0984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpRange: 0.5
 --- !u!1 &2031905725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,20 +1058,3 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &2044707558 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 665543772}
---- !u!114 &2044707559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2044707558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae1cde33c7f46745a28c47772f7c347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: 111
