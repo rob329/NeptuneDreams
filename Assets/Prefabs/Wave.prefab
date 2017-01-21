@@ -56,9 +56,9 @@ MonoBehaviour:
   PointsAddedPerJump: 5
   PopupHeight: 3
   Reversed: 0
-  Speed: 8
+  Speed: 6
   LifeRange: 5
-  KeepAliveJumpRange: 0.5
+  KeepAliveJumpRange: 0.75
   TerribleJumpRange: 2.5
 --- !u!212 &212981422044994046
 SpriteRenderer:
