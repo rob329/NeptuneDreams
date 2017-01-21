@@ -7,6 +7,7 @@ public class Wave : MonoBehaviour
 {
     public int PointWorth;
     public int PointsAddedPerJump;
+    public float PopupHeight;
 
     public bool Reversed;
     public float Speed;
@@ -54,7 +55,7 @@ public class Wave : MonoBehaviour
             lastX = jumper.position.x;
             if (!isNpc)
             {
-                GameScore.GetInstance().AddScore(PointWorth, jumper.position);
+                GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
                 PointWorth += PointsAddedPerJump;
             }
         }

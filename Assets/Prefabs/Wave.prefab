@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointWorth: 10
   PointsAddedPerJump: 5
+  PopupHeight: 3
   Reversed: 0
   Speed: 8
   LifeRange: 5
