@@ -145,13 +145,15 @@ MonoBehaviour:
   KeyLabelPrefab: {fileID: 1278781097937712, guid: ec89d6f2ead33e94b99ae8b19f37506e,
     type: 2}
   LabelSpot: {fileID: 4763879419986892}
-  Eyes: {fileID: 0}
-  Mouth: {fileID: 0}
+  Eyes: {fileID: 212037655126714238}
+  Mouth: {fileID: 212862980961516818}
   NPCColor: {r: 0.4044118, g: 0.4044118, b: 0.4044118, a: 1}
   bodies:
   - {fileID: 21300000, guid: f3e4073c89fcb4732a9c181d1fdea2a7, type: 3}
   - {fileID: 21300000, guid: 3f96fa45a70504343bc786eb0f96c9ac, type: 3}
   - {fileID: 21300000, guid: a0dd89a65c9f5e14bb06bf2c50a02e92, type: 3}
+  - {fileID: 21300000, guid: d50513e9e1f4605428bcace7b28157c9, type: 3}
+  bodyWithoutMouth: {fileID: 21300000, guid: d50513e9e1f4605428bcace7b28157c9, type: 3}
 --- !u!114 &114974005035770152
 MonoBehaviour:
   m_ObjectHideFlags: 1

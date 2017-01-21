@@ -12,10 +12,16 @@ public class InitJumper : MonoBehaviour
     public Color NPCColor;
 
     public Sprite[] bodies;
+    public Sprite bodyWithoutMouth;
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = bodies[Random.Range(0, bodies.Length)];
+        var bodySprite = bodies[Random.Range(0, bodies.Length)];
+        GetComponent<SpriteRenderer>().sprite = bodySprite;
+        if (bodySprite == bodyWithoutMouth)
+        {
+            Mouth.enabled = false;
+        }
     }
 
     public void InitPlayer(KeyCode key)
