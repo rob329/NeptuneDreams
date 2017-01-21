@@ -132,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
-      value: boxguy (2)
+      value: Jumper 3
       objectReference: {fileID: 0}
     - target: {fileID: 114974005035770152, guid: e2a38acdd2181734b874403401a2c4ee,
         type: 2}
@@ -317,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
-      value: boxguy (3)
+      value: Jumper 4
       objectReference: {fileID: 0}
     - target: {fileID: 114974005035770152, guid: e2a38acdd2181734b874403401a2c4ee,
         type: 2}
@@ -368,7 +368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1102369585958384, guid: e2a38acdd2181734b874403401a2c4ee, type: 2}
       propertyPath: m_Name
-      value: boxguy (1)
+      value: Jumper 2
       objectReference: {fileID: 0}
     - target: {fileID: 114974005035770152, guid: e2a38acdd2181734b874403401a2c4ee,
         type: 2}

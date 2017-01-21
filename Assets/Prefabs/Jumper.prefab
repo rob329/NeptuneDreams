@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212787499179839322}
   - component: {fileID: 114974005035770152}
   m_Layer: 0
-  m_Name: boxguy
+  m_Name: Jumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
