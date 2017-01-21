@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\NPCJumperControl.cs" />
      <Compile Include="Assets\Scripts\ParallaxBGObject.cs" />
      <Compile Include="Assets\Scripts\PlayerJumperControl.cs" />
+     <Compile Include="Assets\Scripts\TitleScreenBackground.cs" />
      <Compile Include="Assets\Scripts\Wave.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
