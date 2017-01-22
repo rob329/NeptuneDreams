@@ -79,7 +79,9 @@ public class Jumper : MonoBehaviour
 
     private void SpawnWaves(bool isNpc = false)
     {
-        var waves = Wave.GetAllWavesInEffectRange(transform);
+		Eyes.sprite = happyEyes;
+		Mouth.sprite = happyMouth;
+		var waves = Wave.GetAllWavesInEffectRange(transform);
         if (waves.Count > 0)
         {
             bool anyWavesKeptAlive = false;
@@ -88,12 +90,12 @@ public class Jumper : MonoBehaviour
             {
                 if (wave.IsInKeepAliveRange(transform))
                 {
-                    anyWavesKeptAlive = true;
+					anyWavesKeptAlive = true;
                     wave.KeepAlive(transform, isNpc: isNpc);
                 }
                 else
                 {
-                    wavesNotKeptAlive.Add(wave);
+					wavesNotKeptAlive.Add(wave);
                 }
             }
             // Only kill waves if you haven't successfully jumped for any of them;
