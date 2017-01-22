@@ -20,8 +20,8 @@ public class SwapPlayers : MonoBehaviour {
 
 	public float Speed = 200;
 	public bool Swapping;
-	// Use this for initialization
-	void Start () {
+	
+	public void Init () {
 
 
 		int b = 0;

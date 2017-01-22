@@ -22,5 +22,12 @@ public class JumperSetup : MonoBehaviour
         {
             jumper.InitNPC();
         }
+
+        // Players and NPCs are set up, can safely initialize SwapPlayers now
+        var swapPlayers = FindObjectOfType<SwapPlayers>();
+        if (swapPlayers)
+        {
+            swapPlayers.Init();
+        }
     }
 }
