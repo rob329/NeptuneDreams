@@ -9,70 +9,61 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1384063846494472}
+  m_RootGameObject: {fileID: 1200921383475944}
   m_IsPrefabParent: 1
---- !u!1 &1384063846494472
+--- !u!1 &1200921383475944
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4292704585917504}
-  - component: {fileID: 212981422044994046}
-  - component: {fileID: 114737659136126138}
+  - component: {fileID: 4938350506995072}
+  - component: {fileID: 212100266670018674}
+  - component: {fileID: 114433471073417886}
   m_Layer: 0
-  m_Name: Wave
+  m_Name: WaveBreakEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4292704585917504
+--- !u!4 &4938350506995072
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384063846494472}
+  m_GameObject: {fileID: 1200921383475944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.38, y: 0.53, z: 0}
+  m_LocalPosition: {x: -1.41, y: 5.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114737659136126138
+--- !u!114 &114433471073417886
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384063846494472}
+  m_GameObject: {fileID: 1200921383475944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1636c91b8328f439de3ef84ab1e2a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5274892bdc6495045ade143ab725cf0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pulseSprite: {fileID: 21300000, guid: 3404ea3ad289fd9489074ae1730c45cc, type: 3}
-  BrokenPrefab: {fileID: 1200921383475944, guid: 13b15666f75e1e84cbd777efa6542efd,
-    type: 2}
-  PointWorth: 10
-  PointsAddedPerJump: 5
-  PopupHeight: 3
-  MaximumPointValue: 20
-  PulseSize: 1.5
-  PulseTime: 0.2
-  Reversed: 0
-  Speed: 5.75
-  LifeRange: 5
-  KeepAliveJumpRange: 0.75
-  EffectJumpRange: 2.5
-  LastX: 0
---- !u!212 &212981422044994046
+  Frames:
+  - {fileID: 21300000, guid: 5a2a718ed26e0415889fd58b8284b452, type: 3}
+  - {fileID: 21300000, guid: 8fcb911860c7048adb91cb75a103d840, type: 3}
+  - {fileID: 21300000, guid: 0009a1d15d2a049c6bbd1b830caaae37, type: 3}
+  - {fileID: 21300000, guid: 3f64b75df36b444929be098f966b4134, type: 3}
+  TimePerFrame: 0.025
+--- !u!212 &212100266670018674
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384063846494472}
+  m_GameObject: {fileID: 1200921383475944}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -96,9 +87,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -51223511
+  m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 11c09b9d2999caa4ca77a912d73cf4e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a2a718ed26e0415889fd58b8284b452, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

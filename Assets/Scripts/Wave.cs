@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class Wave : MonoBehaviour
 {
     public Sprite pulseSprite;
+    public GameObject BrokenPrefab;
 
     public int PointWorth;
     public int PointsAddedPerJump;
@@ -20,6 +21,7 @@ public class Wave : MonoBehaviour
     public float Speed;
     public float LifeRange;
     public float KeepAliveJumpRange;
+    
     /// <summary>
     /// The maximum range where a jumper can affect a wave.
     /// If they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
@@ -87,6 +89,11 @@ public class Wave : MonoBehaviour
     public void Kill()
     {
         GameObject.Destroy(gameObject);
+        var broken = GameObject.Instantiate(BrokenPrefab, transform.position, transform.rotation);
+        if (Reversed)
+        {
+            broken.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public bool IsInKeepAliveRange(Transform jumper)
