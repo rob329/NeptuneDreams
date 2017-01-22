@@ -886,7 +886,7 @@ MonoBehaviour:
   Swap2: {fileID: 0}
   Distance: 0
   CenterSwap: {fileID: 1404318807}
-  TimerToSwap: -3
+  TimerToSwap: -15
   Speed: 200
   Swapping: 0
 --- !u!4 &1404318807
