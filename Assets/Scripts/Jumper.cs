@@ -22,6 +22,7 @@ public class Jumper : MonoBehaviour
     public Sprite happyMouth;
     public Sprite sadEyes;
     public Sprite sadMouth;
+    public Animator sweatdropAnimator;
 
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
@@ -101,6 +102,7 @@ public class Jumper : MonoBehaviour
             {
                 Eyes.sprite = sadEyes;
                 Mouth.sprite = sadMouth;
+                sweatdropAnimator.SetTrigger("Sad");
                 foreach (var wave in wavesNotKeptAlive)
                 {
                     wave.Kill();
