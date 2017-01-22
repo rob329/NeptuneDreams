@@ -8,6 +8,7 @@ public class GameTime : MonoBehaviour
 {
     public float TimeRemaining = 2 * 60;
 
+    private AudioSource music;
     private bool started = false;
 
     public static GameTime GetInstance()
@@ -23,9 +24,18 @@ public class GameTime : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Awake()
     {
-        StartCoroutine(Countdown());
+        music = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        // Start the game if we're not waiting for a go-ahead from the title screen
+        if (!FindObjectOfType<TitleScreenBackground>())
+        {
+            StartGame();
+        }
     }
 
     private IEnumerator Countdown()
@@ -71,5 +81,11 @@ public class GameTime : MonoBehaviour
             yield return BigTextController.GetInstance().ShowText("New high score!");
         }
         BigTextController.GetInstance().ShowTextPermanent("Press ESC to return to title screen");
+    }
+
+    public void StartGame()
+    {
+        StartCoroutine(Countdown());
+        music.Play();
     }
 }

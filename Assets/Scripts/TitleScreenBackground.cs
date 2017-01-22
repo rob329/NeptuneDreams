@@ -21,8 +21,6 @@ public class TitleScreenBackground : MonoBehaviour {
 
 		trans.position = new Vector3 (trans.position.x + DirectionAndSpeed * Time.deltaTime, trans.position.y, trans.position.z);
 
-
-
 		if (AnyKeyDelay < 1) {
 			AnyKeyDelay += Time.deltaTime;
 			AnyKeyDisplay.SetActive (false);
@@ -40,9 +38,10 @@ public class TitleScreenBackground : MonoBehaviour {
                 }
 
 				if (Input.anyKeyDown) {
-					this.gameObject.GetComponent<AudioSource> ().Play ();
-					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
-					FadeAway = true;
+                    Destroy(Camera.main.GetComponent<AudioListener>());
+                    FadeAway = true;
+                    SceneManager.LoadSceneAsync("DebugScene", LoadSceneMode.Additive);
+                    Invoke("PlayWhoosh", 0.05f);
                     foreach (var obj in OtherObjs)
                     {
                         Destroy(obj);
@@ -56,7 +55,16 @@ public class TitleScreenBackground : MonoBehaviour {
 		if (FadeAway == true) {
 			trans.position = new Vector3 (trans.position.x, trans.position.y + 10 * Time.deltaTime, trans.position.z);
 			if (trans.position.y > 15)
-				Destroy (Parent);
+            {
+                GameTime.GetInstance().StartGame();
+                Destroy(Parent);
+            }
+				
 		}
 	}
+
+    private void PlayWhoosh()
+    {
+        this.gameObject.GetComponent<AudioSource>().Play();
+    }
 }
