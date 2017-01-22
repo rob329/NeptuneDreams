@@ -18,10 +18,9 @@ public class Wave : MonoBehaviour
     public float PulseTime;
 
     public bool Reversed;
-    public float Speed;
     public float LifeRange;
     public float KeepAliveJumpRange;
-    
+
     /// <summary>
     /// The maximum range where a jumper can affect a wave.
     /// If they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
@@ -39,17 +38,21 @@ public class Wave : MonoBehaviour
     }
     public float Direction { get { return Reversed ? -1 : 1; } }
 
+    public float Speed { get { return speedUp.CurrentSpeed; } }
+
     private Sprite normalSprite;
     private SpriteRenderer spriteRenderer;
     private Jumper jumperToBlame;
     private Jumper jumperIsOk;
     private Jumper[] allJumpers;
+    private SpeedUp speedUp;
 
     // Use this for initialization
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalSprite = spriteRenderer.sprite;
+        speedUp = SpeedUp.GetInstance();
         if (Reversed)
         {
             spriteRenderer.flipX = true;
