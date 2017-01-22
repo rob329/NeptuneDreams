@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Jumper : MonoBehaviour
@@ -16,6 +17,7 @@ public class Jumper : MonoBehaviour
     public Wave WavePrefab;
     public SpriteRenderer Eyes;
     public SpriteRenderer Mouth;
+    public SpriteRenderer Exclamation;
     public Sprite baseEyes;
     public Sprite baseMouth;
     public Sprite happyEyes;
