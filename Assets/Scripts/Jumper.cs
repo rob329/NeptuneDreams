@@ -19,10 +19,12 @@ public class Jumper : MonoBehaviour
     public Sprite baseEyes;
     public Sprite baseMouth;
     public Sprite happyEyes;
+    public Sprite winkingHappyEyes;
     public Sprite happyMouth;
     public Sprite sadEyes;
     public Sprite sadMouth;
     public Animator sweatdropAnimator;
+    public float ChanceToWink = 0.3f;
 
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
@@ -103,6 +105,7 @@ public class Jumper : MonoBehaviour
             if (!anyWavesKeptAlive)
             {
                 Eyes.sprite = sadEyes;
+                Eyes.flipX = false;
                 Mouth.sprite = sadMouth;
                 sweatdropAnimator.SetTrigger("Sad");
                 foreach (var wave in wavesNotKeptAlive)
@@ -113,8 +116,7 @@ public class Jumper : MonoBehaviour
             else
             {
                 // We kept some waves alive, yay!
-                Eyes.sprite = happyEyes;
-                Mouth.sprite = happyMouth;
+                BeHappy();
             }
         }
         else
@@ -126,5 +128,21 @@ public class Jumper : MonoBehaviour
             leftWave.Reversed = true;
             leftWave.LastX = transform.position.x;
         }
+    }
+
+    private void BeHappy()
+    {
+        if (Random.value > ChanceToWink)
+        {
+            Eyes.flipX = false;
+            Eyes.sprite = happyEyes;
+        }
+        else
+        {
+            Eyes.sprite = winkingHappyEyes;
+            // Randomly wink the opposite eye
+            Eyes.flipX = Random.value > 0.5f;
+        }
+        Mouth.sprite = happyMouth;
     }
 }
