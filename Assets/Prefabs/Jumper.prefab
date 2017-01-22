@@ -335,6 +335,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9dcbc381067c7cc439231c3437f5ace1, type: 3}
   - {fileID: 8300000, guid: 4e43aafafb07dd241953177dddb1cd38, type: 3}
   - {fileID: 8300000, guid: 8483ab0c0ebf4024faafa56c74880fd1, type: 3}
+  SadOnGroundTime: 0.5
 --- !u!212 &212037655126714238
 SpriteRenderer:
   m_ObjectHideFlags: 1
