@@ -12,7 +12,8 @@ public class TitleScreenBackground : MonoBehaviour {
 	public GameObject Parent;
 	public GameObject AnyKeyDisplay;
 	private float AnyKeyDelay;
-
+	public bool CreditScreenToggle;
+	public GameObject CreditScreen;
     public GameObject DeleteOnStart;
 	
 	void Update () {
@@ -36,8 +37,12 @@ public class TitleScreenBackground : MonoBehaviour {
                     Application.Quit();
                     return;
                 }
+				if (Input.GetKeyDown ("c")) {
+					CreditScreenToggle = !CreditScreenToggle;
 
-				if (Input.anyKeyDown) {
+				}
+
+				if (Input.anyKeyDown && Input.GetKey ("c") != true) {
                     Destroy(Camera.main.GetComponent<AudioListener>());
                     FadeAway = true;
                     SceneManager.LoadSceneAsync("DebugScene", LoadSceneMode.Additive);
@@ -61,6 +66,8 @@ public class TitleScreenBackground : MonoBehaviour {
             }
 				
 		}
+		CreditScreen.SetActive (CreditScreenToggle);
+
 	}
 
     private void PlayWhoosh()
