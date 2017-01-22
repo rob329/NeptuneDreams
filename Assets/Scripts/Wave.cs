@@ -26,7 +26,6 @@ public class Wave : MonoBehaviour
     /// The maximum range where a jumper can affect a wave.
     /// If they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
     /// </summary>
-    [FormerlySerializedAs("TerribleJumpRange")]
     public float EffectJumpRange;
 
     public float LastX;
@@ -42,6 +41,9 @@ public class Wave : MonoBehaviour
 
     private Sprite normalSprite;
     private SpriteRenderer spriteRenderer;
+    private Jumper jumperToBlame;
+    private Jumper jumperIsOk;
+    private Jumper[] allJumpers;
 
     // Use this for initialization
     void Start()
@@ -52,17 +54,39 @@ public class Wave : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        allJumpers = FindObjectsOfType<Jumper>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Find out if we're near a jumper who ought to do something
+        foreach (var jumper in allJumpers)
+        {
+            if (IsInKeepAliveRange(jumper.transform))
+            {
+                if (jumper != jumperIsOk)
+                {
+                    jumperToBlame = jumper;
+                    jumperIsOk = null;
+                }
+                break;
+            }
+        }
+
         // Calculate if it's dead
         var diesAtX = LastX + Direction * LifeRange;
         if ((!Reversed && transform.position.x > diesAtX)
             || (Reversed && transform.position.x < diesAtX))
         {
-            Kill();
+            float currentX = transform.position.x;
+
+            bool isPlayer = jumperToBlame != null && jumperToBlame != jumperIsOk && jumperToBlame.GetComponent<PlayerJumperControl>() != null;
+            if (isPlayer)
+            {
+                jumperToBlame.BeSadOnGround();
+            }
+            Kill(isPlayer: isPlayer);
         }
 
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
@@ -78,6 +102,7 @@ public class Wave : MonoBehaviour
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         LastX = jumper.position.x;
+        jumperIsOk = jumper.GetComponent<Jumper>();
         StartCoroutine(Pulse());
         if (!isNpc && GameTime.GetInstance().IsRunning)
         {
@@ -86,13 +111,16 @@ public class Wave : MonoBehaviour
         }
     }
 
-    public void Kill()
+    public void Kill(bool isPlayer = false)
     {
         GameObject.Destroy(gameObject);
-        var broken = GameObject.Instantiate(BrokenPrefab, transform.position, transform.rotation);
-        if (Reversed)
+        if (isPlayer)
         {
-            broken.GetComponent<SpriteRenderer>().flipX = true;
+            var broken = GameObject.Instantiate(BrokenPrefab, transform.position, transform.rotation);
+            if (Reversed)
+            {
+                broken.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
 

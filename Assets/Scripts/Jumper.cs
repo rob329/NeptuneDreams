@@ -115,13 +115,10 @@ public class Jumper : MonoBehaviour
             // don't want to rain on their successful happiness and stuff
             if (!anyWavesKeptAlive)
             {
-                Eyes.sprite = sadEyes;
-                Eyes.flipX = false;
-                Mouth.sprite = sadMouth;
-                sweatdropAnimator.SetTrigger("Sad");
+                BeSad();
                 foreach (var wave in wavesNotKeptAlive)
                 {
-                    wave.Kill();
+                    wave.Kill(true);
                 }
             }
             else
@@ -149,6 +146,21 @@ public class Jumper : MonoBehaviour
             leftWave.Reversed = true;
             leftWave.LastX = transform.position.x;
         }
+    }
+
+    // The logic for this will be slightly different because
+    // we can't rely on landing to take the face back to normal
+    public void BeSadOnGround()
+    {
+        BeSad();
+    }
+
+    private void BeSad()
+    {
+        Eyes.sprite = sadEyes;
+        Eyes.flipX = false;
+        Mouth.sprite = sadMouth;
+        sweatdropAnimator.SetTrigger("Sad");
     }
 
     private void BeHappy()
