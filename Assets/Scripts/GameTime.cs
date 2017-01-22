@@ -64,7 +64,12 @@ public class GameTime : MonoBehaviour
     private IEnumerator EndOfGame()
     {
         yield return BigTextController.GetInstance().ShowText("Game!");
-        yield return BigTextController.GetInstance().ShowText("New high score!");
+        int score = GameScore.GetInstance().Score;
+        if (score > HighScore.GetHighScore())
+        {
+            HighScore.SetHighScore(score);
+            yield return BigTextController.GetInstance().ShowText("New high score!");
+        }
         BigTextController.GetInstance().ShowTextPermanent("Press ESC to return to title screen");
     }
 }

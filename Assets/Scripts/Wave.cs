@@ -50,7 +50,6 @@ public class Wave : MonoBehaviour
 
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
-        var jumperX = jumper.position.x;
         LastX = jumper.position.x;
         if (!isNpc && GameTime.GetInstance().IsRunning)
         {

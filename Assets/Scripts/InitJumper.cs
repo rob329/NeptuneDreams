@@ -35,7 +35,7 @@ public class InitJumper : MonoBehaviour
     
     public void InitNPC()
     {
-        var controller = gameObject.AddComponent<NPCJumperControl>();
+        gameObject.AddComponent<NPCJumperControl>();
         foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
         {
             sprite.color = NPCColor;

@@ -8,18 +8,13 @@ public class TitleScreenBackground : MonoBehaviour {
 	public Transform trans;
 	public int DirectionAndSpeed;
 	public bool FadeAway;
-	public GameObject OtherObjs;
+	public GameObject[] OtherObjs;
 	public GameObject Parent;
 	public GameObject AnyKeyDisplay;
-	public int HighScore;
-	public Text HighScoreDisplay;
 	private float AnyKeyDelay;
-	// Use this for initialization
-	void Start () {
-		HighScoreDisplay.text = "High Score: " + HighScore;
-	}
+
+    public GameObject DeleteOnStart;
 	
-	// Update is called once per frame
 	void Update () {
 		if (trans.position.x < -900 || trans.position.x > 900)
 			DirectionAndSpeed = -DirectionAndSpeed;
@@ -48,8 +43,10 @@ public class TitleScreenBackground : MonoBehaviour {
 					this.gameObject.GetComponent<AudioSource> ().Play ();
 					SceneManager.LoadScene ("DebugScene", LoadSceneMode.Additive);
 					FadeAway = true;
-
-					Destroy (OtherObjs);
+                    foreach (var obj in OtherObjs)
+                    {
+                        Destroy(obj);
+                    }
 				}
 			}
 
