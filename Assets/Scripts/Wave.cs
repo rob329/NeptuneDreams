@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,10 +7,14 @@ using UnityEngine.Serialization;
 
 public class Wave : MonoBehaviour
 {
+    public Sprite pulseSprite;
+
     public int PointWorth;
     public int PointsAddedPerJump;
     public float PopupHeight;
     public int MaximumPointValue = 20;
+    public float PulseSize;
+    public float PulseTime;
 
     public bool Reversed;
     public float Speed;
@@ -33,12 +38,17 @@ public class Wave : MonoBehaviour
     }
     public float Direction { get { return Reversed ? -1 : 1; } }
 
+    private Sprite normalSprite;
+    private SpriteRenderer spriteRenderer;
+
     // Use this for initialization
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        normalSprite = spriteRenderer.sprite;
         if (Reversed)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            spriteRenderer.flipX = true;
         }
     }
 
@@ -56,9 +66,17 @@ public class Wave : MonoBehaviour
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
     }
 
+    private IEnumerator Pulse()
+    {
+        spriteRenderer.sprite = pulseSprite;
+        yield return new WaitForSeconds(PulseTime);
+        spriteRenderer.sprite = normalSprite;
+    }
+
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         LastX = jumper.position.x;
+        StartCoroutine(Pulse());
         if (!isNpc && GameTime.GetInstance().IsRunning)
         {
             GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
