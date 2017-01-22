@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\UI\ScoreIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\Timer.cs" />
      <Compile Include="Assets\Scripts\Wave.cs" />
+     <Compile Include="Assets\SpriteAnimationEffect.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

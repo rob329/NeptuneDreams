@@ -632,9 +632,8 @@ GameObject:
   - component: {fileID: 797590804}
   - component: {fileID: 797590807}
   - component: {fileID: 797590806}
-  - component: {fileID: 797590805}
   m_Layer: 9
-  m_Name: HighScore (1)
+  m_Name: PressForCredits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,17 +657,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3, y: -86}
   m_SizeDelta: {x: 756, y: 425}
   m_Pivot: {x: -0.000000019557774, y: 1}
---- !u!114 &797590805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797590803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358250c8ca6f3644abc85ee284f13a20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &797590806
 MonoBehaviour:
   m_ObjectHideFlags: 0
