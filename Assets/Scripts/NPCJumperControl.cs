@@ -17,7 +17,7 @@ public class NPCJumperControl : MonoBehaviour
 
     void Update()
     {
-        var waves = Wave.GetAllWavesInRange(transform);
+        var waves = Wave.GetAllWavesInEffectRange(transform);
         if (waves.Any(w => WaveIsInRange(w)))
         {
             jumper.Jump(isNpc: true);

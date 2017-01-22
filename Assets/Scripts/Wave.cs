@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Wave : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class Wave : MonoBehaviour
     public float LifeRange;
     public float KeepAliveJumpRange;
     /// <summary>
-    /// The maximum range to consider a jumper responsible for keeping a wave alive;
-    /// if they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
+    /// The maximum range where a jumper can affect a wave.
+    /// If they jump between this and the KeepAliveJumpRange, the wave will die, but no new waves will be created
     /// </summary>
-    public float TerribleJumpRange;
+    [FormerlySerializedAs("TerribleJumpRange")]
+    public float EffectJumpRange;
 
     private float lastX;
 
@@ -50,25 +52,33 @@ public class Wave : MonoBehaviour
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         var jumperX = jumper.position.x;
-        if  (Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange)
+        lastX = jumper.position.x;
+        if (!isNpc && GameTime.GetInstance().IsRunning)
         {
-            lastX = jumper.position.x;
-            if (!isNpc && GameTime.GetInstance().IsRunning)
-            {
-                GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
-                PointWorth += PointsAddedPerJump;
-            }
+            GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
+            PointWorth += PointsAddedPerJump;
         }
     }
 
-    public bool IsInRange(Transform jumper)
+    public void Kill()
     {
-        var jumperX = jumper.position.x;
-        return Mathf.Abs(jumperX - transform.position.x) < TerribleJumpRange;
+        GameObject.Destroy(gameObject);
     }
 
-    public static IList<Wave> GetAllWavesInRange(Transform jumper)
+    public bool IsInKeepAliveRange(Transform jumper)
     {
-        return FindObjectsOfType<Wave>().Where(w => w.IsInRange(jumper)).ToList();
+        var jumperX = jumper.position.x;
+        return Mathf.Abs(jumperX - transform.position.x) < KeepAliveJumpRange;
+    }
+
+    public bool IsInEffectRange(Transform jumper)
+    {
+        var jumperX = jumper.position.x;
+        return Mathf.Abs(jumperX - transform.position.x) < EffectJumpRange;
+    }
+
+    public static IList<Wave> GetAllWavesInEffectRange(Transform jumper)
+    {
+        return FindObjectsOfType<Wave>().Where(w => w.IsInEffectRange(jumper)).ToList();
     }
 }

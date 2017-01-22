@@ -14,6 +14,12 @@ public class Jumper : MonoBehaviour
     public float Gravity;
     public float WaveStartOffset;
     public Wave WavePrefab;
+    public SpriteRenderer Eyes;
+    public SpriteRenderer Mouth;
+    public Sprite baseEyes;
+    public Sprite baseMouth;
+    public Sprite happyEyes;
+    public Sprite happyMouth;
 
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
@@ -49,6 +55,8 @@ public class Jumper : MonoBehaviour
                 currentY += yVelocity;
                 if (currentY <= 0)
                 {
+                    Eyes.sprite = baseEyes;
+                    Mouth.sprite = baseMouth;
                     currentState = JumperState.ON_GROUND;
                     currentY = 0;
                 }
@@ -68,12 +76,37 @@ public class Jumper : MonoBehaviour
 
     private void SpawnWaves(bool isNpc = false)
     {
-        var waves = Wave.GetAllWavesInRange(transform);
+        var waves = Wave.GetAllWavesInEffectRange(transform);
         if (waves.Count > 0)
         {
+            bool anyWavesKeptAlive = false;
+            var wavesNotKeptAlive = new List<Wave>();
             foreach (var wave in waves)
             {
-                wave.KeepAlive(transform, isNpc: isNpc);
+                if (wave.IsInKeepAliveRange(transform))
+                {
+                    anyWavesKeptAlive = true;
+                    wave.KeepAlive(transform, isNpc: isNpc);
+                }
+                else
+                {
+                    wavesNotKeptAlive.Add(wave);
+                }
+            }
+            // Only kill waves if you haven't successfully jumped for any of them;
+            // don't want to rain on their successful happiness and stuff
+            if (!anyWavesKeptAlive)
+            {
+                foreach (var wave in wavesNotKeptAlive)
+                {
+                    wave.Kill();
+                }
+            }
+            else
+            {
+                // We kept some waves alive, yay!
+                Eyes.sprite = happyEyes;
+                Mouth.sprite = happyMouth;
             }
         }
         else

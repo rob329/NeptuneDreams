@@ -145,8 +145,6 @@ MonoBehaviour:
   KeyLabelPrefab: {fileID: 1278781097937712, guid: ec89d6f2ead33e94b99ae8b19f37506e,
     type: 2}
   LabelSpot: {fileID: 4763879419986892}
-  Eyes: {fileID: 212037655126714238}
-  Mouth: {fileID: 212862980961516818}
   NPCColor: {r: 0.4044118, g: 0.4044118, b: 0.4044118, a: 1}
   bodies:
   - {fileID: 21300000, guid: f3e4073c89fcb4732a9c181d1fdea2a7, type: 3}
@@ -170,6 +168,12 @@ MonoBehaviour:
   WaveStartOffset: 1
   WavePrefab: {fileID: 114737659136126138, guid: cb684434412b8024696e896a5f699dd5,
     type: 2}
+  Eyes: {fileID: 212037655126714238}
+  Mouth: {fileID: 212862980961516818}
+  baseEyes: {fileID: 21300000, guid: 58309385e582fa74a93153004aa67bb8, type: 3}
+  baseMouth: {fileID: 21300000, guid: c1502e1a960789843b78825fd2721b06, type: 3}
+  happyEyes: {fileID: 21300000, guid: a4ff7c80fe2098c459c9de314ecb5104, type: 3}
+  happyMouth: {fileID: 21300000, guid: b2301d9979562424a906d46c0916b3d6, type: 3}
 --- !u!212 &212037655126714238
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Jumper))]
 public class InitJumper : MonoBehaviour
 {
     public GameObject KeyLabelPrefab;
     public Transform LabelSpot;
-    public SpriteRenderer Eyes;
-    public SpriteRenderer Mouth;
     public Color NPCColor;
 
     public Sprite[] bodies;
@@ -16,11 +15,12 @@ public class InitJumper : MonoBehaviour
 
     private void Start()
     {
+        var jumper = GetComponent<Jumper>();
         var bodySprite = bodies[Random.Range(0, bodies.Length)];
         GetComponent<SpriteRenderer>().sprite = bodySprite;
         if (bodySprite == bodyWithoutMouth)
         {
-            Mouth.enabled = false;
+            jumper.Mouth.enabled = false;
         }
     }
 
