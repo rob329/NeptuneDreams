@@ -7,6 +7,7 @@ public class SpeedUp : MonoBehaviour
     public float SpeedUpWithRemaining = 45;
     public float InitialSpeed;
     public float FastSpeed;
+    public AudioClip FasterMusic;
 
     private bool hasSpedUp = false;
     private GameTime gameTime;
@@ -35,6 +36,9 @@ public class SpeedUp : MonoBehaviour
         {
             hasSpedUp = true;
             BigTextController.GetInstance().ShowText("Faster!");
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.clip = FasterMusic;
+            audioSource.Play();
         }
     }
 }

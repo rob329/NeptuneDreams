@@ -54,7 +54,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 214bedadb2389c740baab29972f54b0c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9a58f8e6c3f862743b376eb2394d6f56, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -188,3 +188,4 @@ MonoBehaviour:
   SpeedUpWithRemaining: 45
   InitialSpeed: 5.75
   FastSpeed: 11.5
+  FasterMusic: {fileID: 8300000, guid: 0ea23c2685ba0a842848d87284a05807, type: 3}
