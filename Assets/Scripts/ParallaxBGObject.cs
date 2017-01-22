@@ -18,8 +18,9 @@ public class ParallaxBGObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		trans.position = new Vector3 (trans.position.x - Speed*Time.deltaTime, trans.position.y, trans.position.z);
+        if (Time.timeScale < 0.1f) return;
+
+        trans.position = new Vector3 (trans.position.x - Speed*Time.deltaTime, trans.position.y, trans.position.z);
 		trans.eulerAngles = new Vector3 (trans.eulerAngles.x, trans.eulerAngles.y, trans.eulerAngles.z - RotationSpeed*Time.deltaTime);
 
 

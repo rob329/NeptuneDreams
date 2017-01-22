@@ -57,6 +57,7 @@ public class Jumper : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale < 0.1f) return;
         transform.position = new Vector3(transform.position.x, initialHeight + currentY, transform.position.z);
     }
 

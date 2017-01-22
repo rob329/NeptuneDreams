@@ -18,6 +18,7 @@ public class PlayerJumperControl : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale < 0.1f) return;
         if (Input.GetKeyDown(Key) && jumper.CanJump)
         {
             jumper.Jump();

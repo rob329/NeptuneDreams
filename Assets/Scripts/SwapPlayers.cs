@@ -69,6 +69,7 @@ public class SwapPlayers : MonoBehaviour {
 			}
 
 			Swapping = true;
+            Time.timeScale = 0;
 			Swap1.parent = CenterSwap;
 			Swap2.parent = CenterSwap;
 			Swap1.position = new Vector3 (Swap1.position.x, -2.77f, Swap1.position.z);
@@ -87,7 +88,7 @@ public class SwapPlayers : MonoBehaviour {
 			Swap1.eulerAngles = new Vector3 (Swap1.eulerAngles.x, Swap1.eulerAngles.y, 0);
 			Swap2.eulerAngles = new Vector3 (Swap2.eulerAngles.x, Swap2.eulerAngles.y, 0);
 
-			CenterSwap.eulerAngles = new Vector3 (CenterSwap.eulerAngles.x, CenterSwap.eulerAngles.y, CenterSwap.eulerAngles.z + (Time.deltaTime * Speed));
+			CenterSwap.eulerAngles = new Vector3 (CenterSwap.eulerAngles.x, CenterSwap.eulerAngles.y, CenterSwap.eulerAngles.z + (Time.unscaledDeltaTime * Speed));
 
 			if (CenterSwap.eulerAngles.z >= 180) {
 				CenterSwap.eulerAngles = new Vector3 (CenterSwap.eulerAngles.x, CenterSwap.eulerAngles.y, 180);
@@ -102,7 +103,8 @@ public class SwapPlayers : MonoBehaviour {
 				Swap1.gameObject.GetComponent<Jumper> ().enabled = true;
 				Swap2.gameObject.GetComponent<Jumper> ().enabled = true;
 				Swapping = false;
-			}
+                Time.timeScale = 1;
+            }
 		}
 
 	}

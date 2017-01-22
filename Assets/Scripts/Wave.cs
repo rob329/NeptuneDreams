@@ -63,6 +63,7 @@ public class Wave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale < 0.1f) return;
         // Find out if we're near a jumper who ought to do something
         foreach (var jumper in allJumpers)
         {
