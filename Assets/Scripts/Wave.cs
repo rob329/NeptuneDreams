@@ -17,7 +17,6 @@ public class Wave : MonoBehaviour
     public float PulseTime;
 
     public bool Reversed;
-    public float Speed;
     public float LifeRange;
     public float KeepAliveJumpRange;
     /// <summary>
@@ -38,14 +37,18 @@ public class Wave : MonoBehaviour
     }
     public float Direction { get { return Reversed ? -1 : 1; } }
 
+    public float Speed { get { return speedUp.CurrentSpeed; } }
+
     private Sprite normalSprite;
     private SpriteRenderer spriteRenderer;
+    private SpeedUp speedUp;
 
     // Use this for initialization
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalSprite = spriteRenderer.sprite;
+        speedUp = SpeedUp.GetInstance();
         if (Reversed)
         {
             spriteRenderer.flipX = true;
