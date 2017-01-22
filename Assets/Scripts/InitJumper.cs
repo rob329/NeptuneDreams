@@ -6,12 +6,20 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Jumper))]
 public class InitJumper : MonoBehaviour
 {
+    [System.Serializable]
+    public class BodyTypeInfo
+    {
+        public Sprite BodySprite;
+        public AudioClip[] WaveCompletionSounds;
+    }
+
     public GameObject KeyLabelPrefab;
     public Transform LabelSpot;
     public Color NPCColor;
 
     public Sprite[] bodies;
     public Sprite bodyWithoutMouth;
+    public BodyTypeInfo[] BodyTypeExtras;
 
     private void Start()
     {
@@ -21,6 +29,16 @@ public class InitJumper : MonoBehaviour
         if (bodySprite == bodyWithoutMouth)
         {
             jumper.Mouth.enabled = false;
+        }
+        foreach (var extras in BodyTypeExtras)
+        {
+            if (extras.BodySprite == bodySprite)
+            {
+                var newSounds = new List<AudioClip>(jumper.WaveCompletionSounds);
+                newSounds.AddRange(extras.WaveCompletionSounds);
+                jumper.WaveCompletionSounds = newSounds.ToArray();
+                break;
+            }
         }
     }
 
