@@ -29,12 +29,16 @@ public class Jumper : MonoBehaviour
     public AudioClip JumpSound;
     public AudioClip WaveSuccessSound;
     public AudioClip[] WaveCompletionSounds;
+    public float SadOnGroundTime;
 
     private AudioSource audioSource;
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
     private float initialHeight;
     private float yVelocity;
+    private float sadTimeRemaining = 0;
+
+    public bool IsSad { get { return sadTimeRemaining > 0; } }
 
     public bool CanJump {
         get
@@ -67,12 +71,19 @@ public class Jumper : MonoBehaviour
                 if (currentY <= 0)
                 {
                     audioSource.PlayOneShot(LandingSound);
-                    Eyes.sprite = baseEyes;
-                    Mouth.sprite = baseMouth;
-                    currentState = JumperState.ON_GROUND;
+                    BeNormal();
                     currentY = 0;
                 }
                 break;
+        }
+
+        if (sadTimeRemaining > 0)
+        {
+            sadTimeRemaining -= Time.deltaTime;
+            if (sadTimeRemaining <= 0)
+            {
+                BeNormal();
+            }
         }
     }
 
@@ -115,13 +126,10 @@ public class Jumper : MonoBehaviour
             // don't want to rain on their successful happiness and stuff
             if (!anyWavesKeptAlive)
             {
-                Eyes.sprite = sadEyes;
-                Eyes.flipX = false;
-                Mouth.sprite = sadMouth;
-                sweatdropAnimator.SetTrigger("Sad");
+                BeSad();
                 foreach (var wave in wavesNotKeptAlive)
                 {
-                    wave.Kill();
+                    wave.Kill(true);
                 }
             }
             else
@@ -151,19 +159,48 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    // The logic for this will be slightly different because
+    // we can't rely on landing to take the face back to normal
+    public void BeSadOnGround()
+    {
+        BeSad();
+        sadTimeRemaining = SadOnGroundTime;
+    }
+
+    private void BeNormal()
+    {
+        if (!IsSad)
+        {
+            Eyes.sprite = baseEyes;
+            Mouth.sprite = baseMouth;
+            currentState = JumperState.ON_GROUND;
+        }
+    }
+
+    private void BeSad()
+    {
+        Eyes.sprite = sadEyes;
+        Eyes.flipX = false;
+        Mouth.sprite = sadMouth;
+        sweatdropAnimator.SetTrigger("Sad");
+    }
+
     private void BeHappy()
     {
-        if (Random.value > ChanceToWink)
+        if (!IsSad)
         {
-            Eyes.flipX = false;
-            Eyes.sprite = happyEyes;
+            if (Random.value > ChanceToWink)
+            {
+                Eyes.flipX = false;
+                Eyes.sprite = happyEyes;
+            }
+            else
+            {
+                Eyes.sprite = winkingHappyEyes;
+                // Randomly wink the opposite eye
+                Eyes.flipX = Random.value > 0.5f;
+            }
+            Mouth.sprite = happyMouth;
         }
-        else
-        {
-            Eyes.sprite = winkingHappyEyes;
-            // Randomly wink the opposite eye
-            Eyes.flipX = Random.value > 0.5f;
-        }
-        Mouth.sprite = happyMouth;
     }
 }
