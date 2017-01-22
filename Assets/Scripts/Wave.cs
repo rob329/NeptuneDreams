@@ -21,7 +21,7 @@ public class Wave : MonoBehaviour
     [FormerlySerializedAs("TerribleJumpRange")]
     public float EffectJumpRange;
 
-    private float lastX;
+    public float LastX;
 
     public float Direction { get { return Reversed ? -1 : 1; } }
 
@@ -32,14 +32,13 @@ public class Wave : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        lastX = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Calculate if it's dead
-        var diesAtX = lastX + Direction * LifeRange;
+        var diesAtX = LastX + Direction * LifeRange;
         if ((!Reversed && transform.position.x > diesAtX)
             || (Reversed && transform.position.x < diesAtX))
         {
@@ -52,7 +51,7 @@ public class Wave : MonoBehaviour
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         var jumperX = jumper.position.x;
-        lastX = jumper.position.x;
+        LastX = jumper.position.x;
         if (!isNpc && GameTime.GetInstance().IsRunning)
         {
             GameScore.GetInstance().AddScore(PointWorth, jumper.position + new Vector3(0, PopupHeight));
