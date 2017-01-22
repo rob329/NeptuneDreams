@@ -62,7 +62,7 @@ public class Wave : MonoBehaviour
         if ((!Reversed && transform.position.x > diesAtX)
             || (Reversed && transform.position.x < diesAtX))
         {
-            GameObject.Destroy(gameObject);
+            Kill();
         }
 
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);

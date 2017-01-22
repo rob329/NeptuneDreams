@@ -55,10 +55,10 @@ MonoBehaviour:
   pulseSprite: {fileID: 21300000, guid: 3404ea3ad289fd9489074ae1730c45cc, type: 3}
   BrokenPrefab: {fileID: 1200921383475944, guid: 13b15666f75e1e84cbd777efa6542efd,
     type: 2}
-  PointWorth: 10
+  PointWorth: 5
   PointsAddedPerJump: 5
   PopupHeight: 3
-  MaximumPointValue: 20
+  MaximumPointValue: 15
   PulseSize: 1.5
   PulseTime: 0.2
   Reversed: 0
