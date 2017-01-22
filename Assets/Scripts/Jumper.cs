@@ -153,9 +153,11 @@ public class Jumper : MonoBehaviour
             var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position + new Vector3(WaveStartOffset, 0), Quaternion.identity);
             rightWave.Reversed = false;
             rightWave.LastX = transform.position.x;
+            rightWave.JumperIsOk = this;
             var leftWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position - new Vector3(WaveStartOffset, 0), Quaternion.identity);
             leftWave.Reversed = true;
             leftWave.LastX = transform.position.x;
+            leftWave.JumperIsOk = this;
         }
     }
 

@@ -43,7 +43,7 @@ public class Wave : MonoBehaviour
     private Sprite normalSprite;
     private SpriteRenderer spriteRenderer;
     private Jumper jumperToBlame;
-    private Jumper jumperIsOk;
+    public Jumper JumperIsOk;
     private Jumper[] allJumpers;
     private SpeedUp speedUp;
 
@@ -68,10 +68,10 @@ public class Wave : MonoBehaviour
         {
             if (IsInKeepAliveRange(jumper.transform))
             {
-                if (jumper != jumperIsOk)
+                if (jumper != JumperIsOk)
                 {
                     jumperToBlame = jumper;
-                    jumperIsOk = null;
+                    JumperIsOk = null;
                 }
                 break;
             }
@@ -82,7 +82,7 @@ public class Wave : MonoBehaviour
         if ((!Reversed && transform.position.x > diesAtX)
             || (Reversed && transform.position.x < diesAtX))
         {
-            bool isPlayer = jumperToBlame != null && jumperToBlame != jumperIsOk && jumperToBlame.GetComponent<PlayerJumperControl>() != null;
+            bool isPlayer = jumperToBlame != null && jumperToBlame != JumperIsOk && jumperToBlame.GetComponent<PlayerJumperControl>() != null;
             if (isPlayer)
             {
                 jumperToBlame.BeSadOnGround();
@@ -111,7 +111,7 @@ public class Wave : MonoBehaviour
     public void KeepAlive(Transform jumper, bool isNpc = false)
     {
         LastX = jumper.position.x;
-        jumperIsOk = jumper.GetComponent<Jumper>();
+        JumperIsOk = jumper.GetComponent<Jumper>();
         StartCoroutine(Pulse());
         if (!isNpc && GameTime.GetInstance().IsRunning)
         {
