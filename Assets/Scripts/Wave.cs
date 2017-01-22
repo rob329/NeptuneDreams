@@ -82,8 +82,6 @@ public class Wave : MonoBehaviour
         if ((!Reversed && transform.position.x > diesAtX)
             || (Reversed && transform.position.x < diesAtX))
         {
-            float currentX = transform.position.x;
-
             bool isPlayer = jumperToBlame != null && jumperToBlame != jumperIsOk && jumperToBlame.GetComponent<PlayerJumperControl>() != null;
             if (isPlayer)
             {
