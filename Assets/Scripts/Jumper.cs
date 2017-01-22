@@ -74,6 +74,7 @@ public class Jumper : MonoBehaviour
                 {
                     audioSource.PlayOneShot(LandingSound);
                     BeNormal();
+                    currentState = JumperState.ON_GROUND;
                     currentY = 0;
                 }
                 break;
@@ -177,7 +178,6 @@ public class Jumper : MonoBehaviour
         {
             Eyes.sprite = baseEyes;
             Mouth.sprite = baseMouth;
-            currentState = JumperState.ON_GROUND;
         }
     }
 
