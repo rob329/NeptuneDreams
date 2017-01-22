@@ -27,6 +27,7 @@ public class Jumper : MonoBehaviour
     public float ChanceToWink = 0.3f;
     public AudioClip JumpSound;
     public AudioClip WaveSuccessSound;
+    public AudioClip[] WaveCompletionSounds;
 
     private AudioSource audioSource;
     private JumperState currentState = JumperState.ON_GROUND;
@@ -90,12 +91,17 @@ public class Jumper : MonoBehaviour
         if (waves.Count > 0)
         {
             bool anyWavesKeptAlive = false;
+            bool anyWavesCompleted = false;
             var wavesNotKeptAlive = new List<Wave>();
             foreach (var wave in waves)
             {
                 if (wave.IsInKeepAliveRange(transform))
                 {
 					anyWavesKeptAlive = true;
+                    if (wave.IsMaxValue)
+                    {
+                        anyWavesCompleted = true;
+                    }
                     wave.KeepAlive(transform, isNpc: isNpc);
                 }
                 else
@@ -122,6 +128,10 @@ public class Jumper : MonoBehaviour
                 if (!isNpc)
                 {
                     audioSource.PlayOneShot(WaveSuccessSound);
+                    if (anyWavesCompleted)
+                    {
+                        audioSource.PlayOneShot(WaveCompletionSounds[Random.Range(0, WaveCompletionSounds.Length)]);
+                    }
                 }
                 BeHappy();
             }

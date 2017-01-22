@@ -9,6 +9,7 @@ public class Wave : MonoBehaviour
     public int PointWorth;
     public int PointsAddedPerJump;
     public float PopupHeight;
+    public int MaximumPointValue = 20;
 
     public bool Reversed;
     public float Speed;
@@ -23,6 +24,13 @@ public class Wave : MonoBehaviour
 
     public float LastX;
 
+    public bool IsMaxValue
+    {
+        get
+        {
+            return PointWorth >= MaximumPointValue;
+        }
+    }
     public float Direction { get { return Reversed ? -1 : 1; } }
 
     // Use this for initialization

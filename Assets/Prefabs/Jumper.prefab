@@ -311,6 +311,13 @@ MonoBehaviour:
   ChanceToWink: 0.3
   JumpSound: {fileID: 8300000, guid: 45569597dc4d1d64daa6124b61ac1fb8, type: 3}
   WaveSuccessSound: {fileID: 8300000, guid: 07fc8b07b4e977740ae900cc37234726, type: 3}
+  WaveCompletionSounds:
+  - {fileID: 8300000, guid: ab2366500933eb244806f2728b064ea9, type: 3}
+  - {fileID: 8300000, guid: ad1e0ec8f6294cf409d9eac5ede66e5e, type: 3}
+  - {fileID: 8300000, guid: 2795ea4b23f92724495e6a4a0c6c90a6, type: 3}
+  - {fileID: 8300000, guid: 9dcbc381067c7cc439231c3437f5ace1, type: 3}
+  - {fileID: 8300000, guid: 4e43aafafb07dd241953177dddb1cd38, type: 3}
+  - {fileID: 8300000, guid: 8483ab0c0ebf4024faafa56c74880fd1, type: 3}
 --- !u!212 &212037655126714238
 SpriteRenderer:
   m_ObjectHideFlags: 1
