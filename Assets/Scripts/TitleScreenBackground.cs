@@ -59,14 +59,15 @@ public class TitleScreenBackground : MonoBehaviour {
 
 		if (FadeAway == true) {
 			trans.position = new Vector3 (trans.position.x, trans.position.y + 10 * Time.deltaTime, trans.position.z);
-			if (trans.position.y > 15)
-            {
-                GameTime.GetInstance().StartGame();
-                Destroy(Parent);
-            }
+			if (trans.position.y > 15) {
+				GameTime.GetInstance ().StartGame ();
+				Destroy (Parent);
+			}
 				
+		} else {
+			CreditScreen.SetActive (CreditScreenToggle);
 		}
-		CreditScreen.SetActive (CreditScreenToggle);
+
 
 	}
 
