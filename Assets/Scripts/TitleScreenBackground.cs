@@ -13,7 +13,9 @@ public class TitleScreenBackground : MonoBehaviour {
 	public GameObject AnyKeyDisplay;
 	private float AnyKeyDelay;
 	public bool CreditScreenToggle;
-	public GameObject CreditScreen;
+    public bool InstructionsScreenToggle;
+    public GameObject CreditScreen;
+    public GameObject InstructionsScreen;
     public GameObject DeleteOnStart;
 	public AudioSource TitleScreenMusicObj;
 	public AudioClip TitleScreenMusic;
@@ -44,12 +46,15 @@ public class TitleScreenBackground : MonoBehaviour {
                     Application.Quit();
                     return;
                 }
-				if (Input.GetKeyDown ("c")) {
+				if (Input.GetKeyDown ("x") && !InstructionsScreenToggle) {
 					CreditScreenToggle = !CreditScreenToggle;
-
 				}
+                if (Input.GetKeyDown(KeyCode.Space) && !CreditScreenToggle)
+                {
+                    InstructionsScreenToggle = !InstructionsScreenToggle;
+                }
 
-				if (Input.anyKeyDown && Input.GetKey ("c") != true) {
+				if (Input.anyKeyDown && !Input.GetKey ("x") && !Input.GetKey(KeyCode.Space)) {
                     Destroy(Camera.main.GetComponent<AudioListener>());
                     FadeAway = true;
                     SceneManager.LoadSceneAsync("DebugScene", LoadSceneMode.Additive);
@@ -79,7 +84,9 @@ public class TitleScreenBackground : MonoBehaviour {
 				AnyKeyDelay = 1;
 			}
 			CreditScreen.SetActive (CreditScreenToggle);
-		}
+            InstructionsScreen.SetActive(InstructionsScreenToggle);
+
+        }
 
 
 	}
