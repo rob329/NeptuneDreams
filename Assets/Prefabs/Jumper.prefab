@@ -325,8 +325,9 @@ MonoBehaviour:
   sadMouth: {fileID: 21300000, guid: a7325a9e9d8c447b8a2870e81ca88ddc, type: 3}
   sweatdropAnimator: {fileID: 95108099352588720}
   ChanceToWink: 0.3
+  LandingSound: {fileID: 8300000, guid: 665646bcda8294846b4b19f6f07fd75b, type: 3}
   JumpSound: {fileID: 8300000, guid: 45569597dc4d1d64daa6124b61ac1fb8, type: 3}
-  WaveSuccessSound: {fileID: 8300000, guid: 07fc8b07b4e977740ae900cc37234726, type: 3}
+  WaveSuccessSound: {fileID: 8300000, guid: 8728388a4bdac0c4091dbf06e103d72b, type: 3}
   WaveCompletionSounds:
   - {fileID: 8300000, guid: ab2366500933eb244806f2728b064ea9, type: 3}
   - {fileID: 8300000, guid: ad1e0ec8f6294cf409d9eac5ede66e5e, type: 3}

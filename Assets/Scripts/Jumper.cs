@@ -25,6 +25,7 @@ public class Jumper : MonoBehaviour
     public Sprite sadMouth;
     public Animator sweatdropAnimator;
     public float ChanceToWink = 0.3f;
+    public AudioClip LandingSound;
     public AudioClip JumpSound;
     public AudioClip WaveSuccessSound;
     public AudioClip[] WaveCompletionSounds;
@@ -65,6 +66,7 @@ public class Jumper : MonoBehaviour
                 currentY += yVelocity;
                 if (currentY <= 0)
                 {
+                    audioSource.PlayOneShot(LandingSound);
                     Eyes.sprite = baseEyes;
                     Mouth.sprite = baseMouth;
                     currentState = JumperState.ON_GROUND;
