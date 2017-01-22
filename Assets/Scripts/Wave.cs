@@ -93,6 +93,14 @@ public class Wave : MonoBehaviour
         transform.position += new Vector3(Direction * Speed * Time.deltaTime, 0, 0);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, KeepAliveJumpRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, EffectJumpRange);
+    }
+
     private IEnumerator Pulse()
     {
         spriteRenderer.sprite = pulseSprite;

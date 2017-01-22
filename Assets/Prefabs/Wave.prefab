@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384063846494472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.38, y: 0.53, z: 0}
+  m_LocalPosition: {x: -2.38, y: -2.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,10 +62,9 @@ MonoBehaviour:
   PulseSize: 1.5
   PulseTime: 0.2
   Reversed: 0
-  Speed: 5.75
   LifeRange: 5
-  KeepAliveJumpRange: 0.75
-  EffectJumpRange: 2.5
+  KeepAliveJumpRange: 1.06
+  EffectJumpRange: 1.87
   LastX: 0
 --- !u!212 &212981422044994046
 SpriteRenderer:
