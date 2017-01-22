@@ -188,9 +188,29 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1890040441418096, guid: 969098f9b35b4da4190eb56e6a89498d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877872029412782, guid: 969098f9b35b4da4190eb56e6a89498d,
+        type: 2}
+      propertyPath: m_Text
+      value: SWITCH-A-ROO!    :O
+      objectReference: {fileID: 0}
+    - target: {fileID: 224491909656224628, guid: 969098f9b35b4da4190eb56e6a89498d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -547.65
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114721661649371200, guid: 969098f9b35b4da4190eb56e6a89498d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 969098f9b35b4da4190eb56e6a89498d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &357908 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1890040441418096, guid: 969098f9b35b4da4190eb56e6a89498d,
+    type: 2}
+  m_PrefabInternal: {fileID: 357907}
 --- !u!4 &3396097 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4975123047476814, guid: e2a38acdd2181734b874403401a2c4ee,
@@ -1153,6 +1173,7 @@ MonoBehaviour:
   TimerToSwap: -8
   Speed: 200
   Swapping: 0
+  WarningSwitching: {fileID: 357908}
 --- !u!4 &1404318807
 Transform:
   m_ObjectHideFlags: 0

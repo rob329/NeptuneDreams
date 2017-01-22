@@ -20,7 +20,8 @@ public class SwapPlayers : MonoBehaviour {
 
 	public float Speed = 200;
 	public bool Swapping;
-	
+	public GameObject WarningSwitching;
+
 	public void Init () {
 
 
@@ -43,10 +44,14 @@ public class SwapPlayers : MonoBehaviour {
 
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-
+		if (TimerToSwap > 8.5) {
+			WarningSwitching.SetActive (true);
+		} else {
+			WarningSwitching.SetActive (false);
+		}
 		if (TimerToSwap > 10) {
 			PlayerToSwap = Random.Range (0, Players.Length);
 			CPUToSwap = Random.Range (0, CPUs.Length);
