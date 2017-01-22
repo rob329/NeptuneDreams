@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwapPlayers : MonoBehaviour {
-<<<<<<< HEAD
+
 	public Transform[] AllJumpers;
 	public Transform[] Players;
 	public Transform[] CPUs;
 	public int PlayerToSwap;
 	public int CPUToSwap;
-=======
->>>>>>> origin/master
 
+	public Transform Swap1;
+	public Transform Swap2;
+
+	public float Distance;
+
+	public Transform CenterSwap;
+	public float TimerToSwap = -8;
+
+	public float Speed = 200;
+	public bool Swapping;
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
+
 
 		int b = 0;
 		int c = 0;
@@ -33,14 +41,12 @@ public class SwapPlayers : MonoBehaviour {
 		}
 			
 
-=======
-		
->>>>>>> origin/master
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
+
 		if (TimerToSwap > 10) {
 			PlayerToSwap = Random.Range (0, Players.Length);
 			CPUToSwap = Random.Range (0, CPUs.Length);
@@ -93,8 +99,6 @@ public class SwapPlayers : MonoBehaviour {
 				Swapping = false;
 			}
 		}
-=======
-		
->>>>>>> origin/master
+
 	}
 }
