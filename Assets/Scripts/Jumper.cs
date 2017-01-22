@@ -20,6 +20,8 @@ public class Jumper : MonoBehaviour
     public Sprite baseMouth;
     public Sprite happyEyes;
     public Sprite happyMouth;
+    public Sprite sadEyes;
+    public Sprite sadMouth;
 
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
@@ -97,6 +99,8 @@ public class Jumper : MonoBehaviour
             // don't want to rain on their successful happiness and stuff
             if (!anyWavesKeptAlive)
             {
+                Eyes.sprite = sadEyes;
+                Mouth.sprite = sadMouth;
                 foreach (var wave in wavesNotKeptAlive)
                 {
                     wave.Kill();

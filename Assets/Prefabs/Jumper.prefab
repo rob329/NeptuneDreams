@@ -174,6 +174,8 @@ MonoBehaviour:
   baseMouth: {fileID: 21300000, guid: c1502e1a960789843b78825fd2721b06, type: 3}
   happyEyes: {fileID: 21300000, guid: a4ff7c80fe2098c459c9de314ecb5104, type: 3}
   happyMouth: {fileID: 21300000, guid: b2301d9979562424a906d46c0916b3d6, type: 3}
+  sadEyes: {fileID: 21300000, guid: 06e66b597634544e29e0c91a466151ad, type: 3}
+  sadMouth: {fileID: 21300000, guid: a7325a9e9d8c447b8a2870e81ca88ddc, type: 3}
 --- !u!212 &212037655126714238
 SpriteRenderer:
   m_ObjectHideFlags: 1
