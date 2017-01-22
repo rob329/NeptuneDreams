@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwapPlayers : MonoBehaviour {
+	public Transform[] AllJumpers;
 	public Transform[] Players;
 	public Transform[] CPUs;
 	public int PlayerToSwap;
@@ -20,11 +21,29 @@ public class SwapPlayers : MonoBehaviour {
 	public bool Swapping;
 	// Use this for initialization
 	void Start () {
+
+		int b = 0;
+		int c = 0;
+
+
+		for (int a = 0; a < AllJumpers.Length; a = a + 1) {
+			if (AllJumpers [a].GetComponent <PlayerJumperControl>() != null) {
+				Players [b] = AllJumpers [a];
+				b = b + 1;
+			}
+
+			if (AllJumpers [a].GetComponent <NPCJumperControl>() != null) {
+				CPUs [c] = AllJumpers [a];
+				c = c + 1;
+			}
+		}
+			
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (TimerToSwap > 8) {
+		if (TimerToSwap > 10) {
 			PlayerToSwap = Random.Range (0, Players.Length);
 			CPUToSwap = Random.Range (0, CPUs.Length);
 

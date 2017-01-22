@@ -866,20 +866,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c80bc77d5c82b348a96308574b80437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Players:
+  AllJumpers:
+  - {fileID: 1395870170}
   - {fileID: 276562139}
   - {fileID: 1459870488}
+  - {fileID: 1254885144}
+  - {fileID: 130203052}
   - {fileID: 1602547277}
   - {fileID: 1075919743}
   - {fileID: 1947634248}
   - {fileID: 771783137}
-  CPUs:
-  - {fileID: 1395870170}
-  - {fileID: 1254885144}
-  - {fileID: 130203052}
   - {fileID: 3396097}
   - {fileID: 1000493768}
   - {fileID: 160050912}
+  Players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CPUs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   PlayerToSwap: 0
   CPUToSwap: 0
   Swap1: {fileID: 0}
