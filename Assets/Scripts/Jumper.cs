@@ -25,7 +25,10 @@ public class Jumper : MonoBehaviour
     public Sprite sadMouth;
     public Animator sweatdropAnimator;
     public float ChanceToWink = 0.3f;
+    public AudioClip JumpSound;
+    public AudioClip WaveSuccessSound;
 
+    private AudioSource audioSource;
     private JumperState currentState = JumperState.ON_GROUND;
     private float currentY;
     private float initialHeight;
@@ -40,6 +43,7 @@ public class Jumper : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currentY = initialHeight = transform.position.y;
     }
 
@@ -73,6 +77,7 @@ public class Jumper : MonoBehaviour
     {
         if (currentState == JumperState.ON_GROUND)
         {
+            audioSource.PlayOneShot(JumpSound);
             yVelocity = JumpSpeed;
             currentState = JumperState.JUMPING;
             SpawnWaves(isNpc: isNpc);
@@ -81,8 +86,6 @@ public class Jumper : MonoBehaviour
 
     private void SpawnWaves(bool isNpc = false)
     {
-		Eyes.sprite = happyEyes;
-		Mouth.sprite = happyMouth;
 		var waves = Wave.GetAllWavesInEffectRange(transform);
         if (waves.Count > 0)
         {
@@ -116,11 +119,17 @@ public class Jumper : MonoBehaviour
             else
             {
                 // We kept some waves alive, yay!
+                if (!isNpc)
+                {
+                    audioSource.PlayOneShot(WaveSuccessSound);
+                }
                 BeHappy();
             }
         }
         else
         {
+            // Spawn waves
+            BeHappy();
             var rightWave = GameObject.Instantiate<Wave>(WavePrefab, transform.position + new Vector3(WaveStartOffset, 0), Quaternion.identity);
             rightWave.Reversed = false;
             rightWave.LastX = transform.position.x;
