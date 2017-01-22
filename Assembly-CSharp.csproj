@@ -46,12 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\InitJumper.cs" />
+     <Compile Include="Assets\JumperSetup.cs" />
      <Compile Include="Assets\Scripts\GameScore.cs" />
      <Compile Include="Assets\Scripts\GameTime.cs" />
      <Compile Include="Assets\Scripts\Jumper.cs" />
      <Compile Include="Assets\Scripts\NPCJumperControl.cs" />
      <Compile Include="Assets\Scripts\ParallaxBGObject.cs" />
      <Compile Include="Assets\Scripts\PlayerJumperControl.cs" />
+     <Compile Include="Assets\Scripts\SwapPlayers.cs" />
      <Compile Include="Assets\Scripts\TitleScreenBackground.cs" />
      <Compile Include="Assets\Scripts\UI\BigTextController.cs" />
      <Compile Include="Assets\Scripts\UI\PopupTextGoUp.cs" />
@@ -59,6 +62,9 @@
      <Compile Include="Assets\Scripts\UI\ScoreIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\Timer.cs" />
      <Compile Include="Assets\Scripts\Wave.cs" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -73,6 +79,9 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
