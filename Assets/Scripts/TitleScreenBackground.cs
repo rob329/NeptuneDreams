@@ -15,16 +15,23 @@ public class TitleScreenBackground : MonoBehaviour {
 	public bool CreditScreenToggle;
 	public GameObject CreditScreen;
     public GameObject DeleteOnStart;
-	
+	public AudioSource TitleScreenMusicObj;
+	public AudioClip TitleScreenMusic;
+
+	void Start (){
+		AnyKeyDisplay.SetActive (false);
+	}
 	void Update () {
 		if (trans.position.x < -900 || trans.position.x > 900)
 			DirectionAndSpeed = -DirectionAndSpeed;
 
+
+
 		trans.position = new Vector3 (trans.position.x + DirectionAndSpeed * Time.deltaTime, trans.position.y, trans.position.z);
 
 		if (AnyKeyDelay < 1) {
-			AnyKeyDelay += Time.deltaTime;
-			AnyKeyDisplay.SetActive (false);
+		//	AnyKeyDelay += Time.deltaTime;
+		//	AnyKeyDisplay.SetActive (false);
 
 		} else {
 
@@ -65,6 +72,12 @@ public class TitleScreenBackground : MonoBehaviour {
 			}
 				
 		} else {
+			if (TitleScreenMusicObj.isPlaying == false) {
+				TitleScreenMusicObj.clip = TitleScreenMusic;
+				TitleScreenMusicObj.loop = true;
+				TitleScreenMusicObj.Play ();
+				AnyKeyDelay = 1;
+			}
 			CreditScreen.SetActive (CreditScreenToggle);
 		}
 
