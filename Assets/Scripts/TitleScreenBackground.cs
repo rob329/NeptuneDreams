@@ -54,7 +54,7 @@ public class TitleScreenBackground : MonoBehaviour {
                     InstructionsScreenToggle = !InstructionsScreenToggle;
                 }
 
-				if (Input.anyKeyDown && !Input.GetKey ("x") && !Input.GetKey(KeyCode.Space)) {
+				if (Input.anyKeyDown && !Input.GetKey ("x") && !Input.GetKey(KeyCode.Space) && !InstructionsScreenToggle) {
                     Destroy(Camera.main.GetComponent<AudioListener>());
                     FadeAway = true;
                     SceneManager.LoadSceneAsync("DebugScene", LoadSceneMode.Additive);
