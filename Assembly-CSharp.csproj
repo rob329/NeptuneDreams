@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\NPCJumperControl.cs" />
      <Compile Include="Assets\Scripts\ParallaxBGObject.cs" />
      <Compile Include="Assets\Scripts\PlayerJumperControl.cs" />
+     <Compile Include="Assets\Scripts\SpinScript.cs" />
      <Compile Include="Assets\Scripts\SwapPlayers.cs" />
      <Compile Include="Assets\Scripts\TitleScreenBackground.cs" />
      <Compile Include="Assets\Scripts\UI\BigTextController.cs" />
